@@ -1,0 +1,20 @@
+:root {
+    --main-bg-color: #CDE7BE;
+    --color-1: #D3E298;
+    --color-2: #ECDD7B;
+    --color-3: #CE8147;
+    --color-4: #561D25;
+}
+* {
+    margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+.container {
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--main-bg-color);
+}

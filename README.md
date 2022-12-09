@@ -1,1 +1,2 @@
 # library
+A small [JavaScript project](https://www.theodinproject.com/lessons/javascript-library) intended to practice and implement the concepts of Objects, Object Constructors and Prototypal Inheritance. Users may add new books with details like author, title, number of pages, read/not read.
