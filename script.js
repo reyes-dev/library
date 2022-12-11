@@ -45,9 +45,27 @@ function displayBooks(myLibrary) {
 
         for(const prop in myLibrary[i]) {
             li = document.createElement('li')
-            li.innerHTML = myLibrary[i][prop]
+            if(myLibrary[i][prop] === true) {
+                li.innerHTML = "read"
+            } else if(myLibrary[i][prop] === false) {
+                li.innerHTML = "unread"
+            } else {
+                li.innerHTML = myLibrary[i][prop]
+            }
             ul.appendChild(li)
         }
+
+        let toggleReadBtn = document.createElement('button')
+        toggleReadBtn.onclick = function() {
+            if(myLibrary[i].read === false) {
+                myLibrary[i].read = true
+            } else if(myLibrary[i].read === true) {
+                myLibrary[i].read = false
+            }
+            displayBooks(myLibrary)
+        }
+        toggleReadBtn.innerHTML = 'Read?'
+        ul.appendChild(toggleReadBtn)
         
         let deleteBtn = document.createElement('button')
         deleteBtn.onclick = function() {
@@ -57,6 +75,7 @@ function displayBooks(myLibrary) {
         }
         deleteBtn.innerHTML = 'Delete Book'
         ul.appendChild(deleteBtn)
+
         libraryContainer.appendChild(ul)
     }
 }
