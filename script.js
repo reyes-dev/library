@@ -9,7 +9,7 @@ form.onsubmit = function(event) {
     let title = document.getElementById("title").value
     let author = document.getElementById("author").value
     let pages = document.getElementById("pages").value
-    let read = document.getElementById("read").value
+    let read = document.getElementById("read").checked
 
     addBookToLibrary(new Book(title, author, pages, read))
     displayBooks(myLibrary)
@@ -38,7 +38,7 @@ function addBookToLibrary(newBook) {
 
 function displayBooks(myLibrary) {
     libraryContainer.innerHTML = ""
-    
+
     for (let i = 0; i < myLibrary.length; i++) {
         let ul = document.createElement('ul')
         
