@@ -1,5 +1,29 @@
 let myLibrary = [];
 let libraryContainer = document.querySelector('.libraryContainer')
+let btn = document.getElementById('toggle-btn');
+let submit = document.querySelector('input[type="submit"]')
+let form = document.querySelector("form")
+
+form.onsubmit = function(event) {
+    event.preventDefault()
+    let title = document.getElementById("title").value
+    let author = document.getElementById("author").value
+    let pages = document.getElementById("pages").value
+    let read = document.getElementById("read").value
+
+    addBookToLibrary(new Book(title, author, pages, read))
+    displayBooks(myLibrary)
+}
+
+btn.addEventListener('click', () => {
+    const form = document.getElementById('form');
+
+    if(form.style.display === 'none') {
+        form.style.display = 'flex';
+    } else {
+        form.style.display = 'none';
+    }
+})
 
 function Book(title, author, pages, read) {
     this.title = title
@@ -13,6 +37,8 @@ function addBookToLibrary(newBook) {
 }
 
 function displayBooks(myLibrary) {
+    libraryContainer.innerHTML = ""
+    
     for (let i = 0; i < myLibrary.length; i++) {
         let ul = document.createElement('ul')
         
