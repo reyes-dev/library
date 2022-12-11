@@ -13,8 +13,24 @@
 	font: inherit;
 	vertical-align: baseline;
 }
+li {
+    list-style: none;
+}
 .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100vh;
     width: 100vw;
     background-color: var(--main-bg-color);
+}
+.libraryContainer {
+    display: flex;
+    gap: 64px;
+}
+ul {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    width: fit-content;
 }
