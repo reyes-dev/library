@@ -1,8 +1,8 @@
 :root {
-    --main-bg-color: #CDE7BE;
-    --color-1: #D3E298;
+    --main-bg-color: #f1faee;
+    --color-1: #a8dadc;
     --color-2: #ECDD7B;
-    --color-3: #CE8147;
+    --color-3: #1d3557;
     --color-4: #561D25;
 }
 * {
@@ -14,18 +14,40 @@
 	font: inherit;
 	vertical-align: baseline;
 }
+body.preload *{
+    animation-duration: 0s !important;
+    -webkit-animation-duration: 0s !important;
+    transition:background-color 0s, opacity 0s, color 0s, width 0s, height 0s, padding 0s, margin 0s !important;
+}
+    
+h1 {
+    font-size: 5em;
+}
+form, ul {
+    background-color: var(--color-1);
+    padding: 16px;
+    border-radius: 3px;
+
+}
 form {
     display: none;
     flex-direction: column;
     gap: 8px;
 }
+form > input {
+    padding: 8px;
+}
 ul {
-    background-color: var(--color-1);
     display: flex;
     flex-direction: column;
+    width: 10vw;
+    max-width: 10vw;
     height: fit-content;
-    width: 128px;
-    padding: 16px;
+    gap: 8px;
+    margin-top: 32px;
+}
+ul:last-of-type {
+    animation: fadeIn 1s;
 }
 li {
     list-style: none;
@@ -34,13 +56,33 @@ li {
     background-color: var(--main-bg-color);
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     height: 100vh;
     width: 100vw;
-    gap: 32px;
+    gap: 16px;
 }
 .libraryContainer {
     display: flex;
-    gap: 64px;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 50vw;
+    gap: 32px;
+    border-top: 1px solid black;
+}
+#toggle-btn {
+    font-size: 4em;
+    background-color: var(--main-bg-color);
+    transition: transform 2s;
+}
+#toggle-btn:hover {
+    transform: rotate(180deg);
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }

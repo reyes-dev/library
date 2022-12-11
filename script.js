@@ -80,7 +80,11 @@ function displayBooks(myLibrary) {
     }
 }
 
-addBookToLibrary(new Book('The Crumpet', 'Kingsworth McGee', 222, true))
-addBookToLibrary(new Book('Sinful Pride', 'Coia Lucioa', 123, false))
-addBookToLibrary(new Book('Orange of Wrath', 'Gulliver Smith', 84, true))
+addBookToLibrary(new Book('The Old Man and the Sea', 'Ernest Hemingway', 127, false))
+addBookToLibrary(new Book('The Republic', 'Plato', 692 , false))
+addBookToLibrary(new Book('Walden', 'Henry David Thoreau', 172, false))
 displayBooks(myLibrary)
+
+setTimeout(function(){
+    document.body.className="";
+},1000);
