@@ -7,25 +7,26 @@
     <title>Library</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body>
+<body class="preload">
     <div class="container">
+        <h1>Library</h1>
+        <div class="libraryContainer">
+        
+        </div>
+
+        <button id="toggle-btn">+</button>
+
         <form action="" id="form">
             <p>Enter Book Information</p>
-            <input type="text" id="title" placeholder="title">
-            <input type="text" id="author" placeholder="author">
-            <input type="text" id="pages" placeholder="number of pages">
+            <input type="text" id="title" placeholder="title" required>
+            <input type="text" id="author" placeholder="author" required>
+            <input type="text" id="pages" placeholder="number of pages" required>
             <label for="checkbox">
                 Read? 
                 <input type="checkbox" id="read">
             </label>
             <input type="submit">
         </form>
-
-        <button id="toggle-btn">Add Book +</button>
-
-        <div class="libraryContainer">
-        
-        </div>
     </div>
     <script src="./script.js"></script>
 </body>
